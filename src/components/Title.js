@@ -7,6 +7,7 @@ class Title extends Component {
         super(props);
         this.state = {  }
     }
+    
     render() { 
         return ( 
             <Menu />
