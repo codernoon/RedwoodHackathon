@@ -3,8 +3,8 @@ import { Switch, Route} from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
 
-
-import SearchOne from './Search1'
+import Menu from './menu'
+import Search from './Search'
 
 class Container extends Component {
     constructor(props) {
@@ -22,7 +22,12 @@ class Container extends Component {
     render() { 
         return ( 
         <div>
-            <SearchOne />
+            <Menu />
+            <Search />
+
+            <Switch>
+                <Route exact path='/add-review' component={Search} />
+            </Switch>
         </div> )
     }
 }
@@ -33,4 +38,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
  
-export default connect(null, mapDispatchToProps)(SearchOne);
+export default connect(null, mapDispatchToProps)(Container);

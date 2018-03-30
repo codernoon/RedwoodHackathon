@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import School from './school'
 
-class SearchOne extends Component {
+class Search extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -42,4 +42,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(SearchOne);
+export default connect(mapStateToProps)(Search);
