@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Switch, Route} from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
+import { Switch, Route} from 'react-router-dom'
 
-import Menu from './menu'
+
+import Title from './title'
 import Search from './Search'
+import AddReview from './Add-Review';
 
 class Container extends Component {
     constructor(props) {
@@ -15,13 +17,14 @@ class Container extends Component {
     render() { 
         return ( 
         <div>
-            <Menu />
-            <Search />
-
+            <Title />
+            
             <Switch>
-                <Route exact path='/add-review' component={Search} />
+                    <Route exact path='/' component={Search} />
+                    <Route path='/add-review' component={AddReview}/>
             </Switch>
-        </div> )
+        </div> 
+        )
     }
 }
  

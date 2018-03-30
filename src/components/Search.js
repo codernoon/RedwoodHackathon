@@ -20,24 +20,18 @@ class Search extends Component {
     render() { 
         return ( 
             <div>
-                <div className="form-group">
-                   <select onChange={this.changeValue.bind(this)} value={this.state.value} className="custom-select">
+                <div id="search-field" className="form-group">
+                   <select id="search-select" onChange={this.changeValue.bind(this)} value={this.state.value} className="form-control">
                         <option value="default">Search By</option>
                         <option value="school">School</option>
                         <option value="city">City</option>
                         <option value="type">Type</option>
                     </select>
-                    <input className="form-control" type="text"/>
+                    <input id="search-input" className="form-control" type="text"/>
                     <button className="btn">Go</button>
                 </div>
             </div>
          )
-    }
-}
-
-const mapStateToProps = state => {
-    return {
-       
     }
 }
 
@@ -47,4 +41,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapDispatchToProps)(Search);
