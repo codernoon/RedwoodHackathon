@@ -11,22 +11,21 @@ class Search extends Component {
          }
     }
 
-    change() {
+    changeValue() {
         this.setState({
             value: event.target.value
-        });
-        
+        });  
     }
 
     render() { 
         return ( 
             <div>
                 <div className="form-group">
-                   <select onChange={this.change.bind(this)} value={this.state.value} className="custom-select">
+                   <select onChange={this.changeValue.bind(this)} value={this.state.value} className="custom-select">
                         <option value="default">Search By</option>
-                        <option value="1">School</option>
-                        <option value="2">City</option>
-                        <option value="3">Type</option>
+                        <option value="school">School</option>
+                        <option value="city">City</option>
+                        <option value="type">Type</option>
                     </select>
                     <input className="form-control" type="text"/>
                     <button className="btn">Go</button>
@@ -42,4 +41,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Search);
+const mapDispatchToProps = dispatch => {
+    return {
+        reduxState: api => dispatch(initialApiCall(api))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

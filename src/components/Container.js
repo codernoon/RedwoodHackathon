@@ -12,13 +12,6 @@ class Container extends Component {
         this.state = {  }
     }
 
-    componentDidMount() {
-        axios.get('http://localhost:8080/api/schools').
-        then(response => {
-            this.props.reduxState(response.data);
-        })
-    }
-
     render() { 
         return ( 
         <div>
@@ -31,11 +24,5 @@ class Container extends Component {
         </div> )
     }
 }
-
-const mapDispatchToProps = dispatch => {
-    return {
-        reduxState: api => dispatch(initialApiCall(api))
-    }
-}
  
-export default connect(null, mapDispatchToProps)(Container);
+export default Container;

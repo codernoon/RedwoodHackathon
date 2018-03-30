@@ -1,5 +1,5 @@
 const initialState = {
-    reviews: []
+    reviews: [],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const rootReducer = (state = initialState, action) => {
         }
         console.log(state.reviews);
     }
-    
+
     return state;
 }
 
