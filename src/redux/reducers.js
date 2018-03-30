@@ -10,13 +10,7 @@ const rootReducer = (state = initialState, action) => {
         }
         console.log(state.reviews);
     }
-    if (action.type == 'ADD_REVIEW') {
-        state = {
-            ...state,
-            reviews: action.payload
-        }
-        console.log(state.reviews);
-    }
+    
     return state;
 }
 
