@@ -17,6 +17,12 @@ class Search extends Component {
         });  
     }
 
+    searchParameter() {
+        this.setState({
+            search: event.target.value
+        });  
+    }
+
     render() { 
         return ( 
             <div>
@@ -27,12 +33,38 @@ class Search extends Component {
                         <option value="city">City</option>
                         <option value="type">Type</option>
                     </select>
-                    <input id="search-input" className="form-control" type="text"/>
-                    <button className="btn">Go</button>
+                    <input onChange={this.searchParameter.bind(this)} id="search-input" className="form-control" type="text"/>
+                    <button onClick= { this.submitSearch.bind(this) } className="btn">Go</button>
                 </div>
             </div>
          )
     }
+
+    submitSearch() {
+        if ( this.state.value= "school") {
+            axios.get('http://localhost:8080/api/schools?name=' + this.state.search)
+            .then(response => {
+                this.props.reduxState(response.data);
+            });
+        }
+
+        else if (this.state.value = "city") {
+            axios.get('http://localhost:8080/api/schools?city=' + this.state.search)
+            .then(response => {
+                this.props.reduxState(response.data);
+            });    
+        } 
+
+        else if (this.state.value = "type") {
+            axios.get('http://localhost:8080/api/schools?type=' + this.state.search)
+            .then(response => {
+                this.props.reduxState(response.data);
+            });
+        }  
+
+    }
+
+
 }
 
 const mapDispatchToProps = dispatch => {
