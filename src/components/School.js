@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
+
 
 class School extends Component {
     constructor(props) {
@@ -10,6 +13,14 @@ class School extends Component {
         return ( 
             <div>
                 <div>
+                    {
+                        this.props.reviews.map( item => {
+
+                            return (
+                                <div> item.schoolName </div>
+                            )
+                        })
+                    }
                     School
                 </div>
             </div>
@@ -17,4 +28,13 @@ class School extends Component {
     }
 }
  
-export default School;
+
+
+const mapStateToProps = state => {
+    return {
+        reviews: state.reviews
+
+    }
+}
+
+export default connect (mapStateToProps)(School);
