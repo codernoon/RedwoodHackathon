@@ -34,7 +34,7 @@ class Search extends Component {
                         <option value="type">Type</option>
                     </select>
                     <input onChange={this.searchParameter.bind(this)} id="search-input" className="form-control" type="text"/>
-                    <button onClick= { this.submitSearch.bind(this) } className="btn">Go</button>
+                    <button onClick= { this.submitSearch.bind(this) } className="btn btn-primary">Go</button>
                 </div>
             </div>
          )
@@ -61,10 +61,7 @@ class Search extends Component {
                 this.props.reduxState(response.data);
             });
         }  
-
     }
-
-
 }
 
 const mapDispatchToProps = dispatch => {

@@ -71,8 +71,10 @@ class AddReview extends Component {
                                 <p>Name: {item.reviewersName} </p>
                                 <p>Rating: {item.rating} </p>
                                 <p>dateAttended: {item.dateAttended} </p>
+                                <p>Review:</p>
+                                <p> {item.writtenReview} </p>
 
-                                if(item.strongTeachers == true){
+                                {/* if(item.strongTeachers == true){
                                     <p>Good Teachers  <span class="glyphicon glyphicon-class-name"></span> </p>
                                 }
 
@@ -106,7 +108,7 @@ class AddReview extends Component {
 
                                 if(item.schoolSecurity == true){
                                     <p>Security On Campus  <span class="glyphicon glyphicon-class-name"></span> </p>
-                                }
+                                } */}
 
                             </div>
                         </div>
@@ -145,7 +147,6 @@ class AddReview extends Component {
             },
         })
             .then(response => {
-                let spinnersAPI = response.data;
                 this.setState({ addedReview: review});
             })
     }

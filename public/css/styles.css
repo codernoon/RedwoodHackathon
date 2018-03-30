@@ -4,3 +4,34 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url("../images/bg8.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Montserrat;
+ }
+ 
+ #search-field {
+    width: 35%;
+    margin: auto;
+ }
+ 
+ #search-select {
+    margin: 40% 0 0 0;
+ }
+ 
+ .navbar-header {
+    font-family: Montserrat;
+    font-size: 75px;
+    text-align: right;
+    
+ }
+ 
+ .navbar-nav{
+    font-family: Montserrat;
+    font-size: 30px;
+    text-align: right;
+ }
+
